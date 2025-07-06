@@ -14,12 +14,17 @@ concurrency:
   group: "pages"
   cancel-in-progress: true
 
+# Only run if this is the main repository (not a fork)
+if: github.repository == 'iwitnessroads/iWitnessRoadsWebsite'
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+    # Add timeout to prevent hanging
+    timeout-minutes: 10
     
     steps:
     - name: Checkout
