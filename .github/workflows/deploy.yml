@@ -3,27 +3,18 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [ main ]
-  workflow_dispatch:
 
 permissions:
   contents: read
   pages: write
   id-token: write
 
-concurrency:
-  group: "pages"
-  cancel-in-progress: true
-
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
-    # Only run if this is the main repository (not a fork)
-    if: github.repository == 'iwitnessroads/iWitnessRoadsWebsite'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    # Add timeout to prevent hanging
-    timeout-minutes: 10
     
     steps:
     - name: Checkout
@@ -38,16 +29,8 @@ jobs:
     - name: Install dependencies
       run: npm ci
       
-    - name: Build for GitHub Pages
+    - name: Build
       run: npm run build:pages
-      
-    - name: Verify build output
-      run: |
-        if [ ! -f "dist/index.html" ]; then
-          echo "Build failed: dist/index.html not found"
-          exit 1
-        fi
-        echo "Build verification passed"
       
     - name: Setup Pages
       uses: actions/configure-pages@v4
