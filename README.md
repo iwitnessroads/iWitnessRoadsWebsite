@@ -1,6 +1,6 @@
-# iWitnessRoads Website
+# SafeRoad Website
 
-A modern, mobile-responsive website for the iWitnessRoads project - an innovative traffic violation reporting system.
+A modern, mobile-responsive website for the SafeRoad project - an innovative traffic violation reporting system.
 
 ## Features
 
@@ -29,8 +29,8 @@ A modern, mobile-responsive website for the iWitnessRoads project - an innovativ
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/iwitnessroads/iWitnessRoads_Website.git
-cd iWitnessRoads_Website
+git clone https://github.com/your-username/SafeRoadWebsite.git
+cd SafeRoadWebsite
 ```
 
 2. Install dependencies:
@@ -55,7 +55,7 @@ npm run dev
    - Go to your repository on GitHub
    - Navigate to Settings → Pages
    - Set Source to "GitHub Actions"
-   - The site will be available at `https://iwitnessroads.github.io/iWitnessRoads_Website/`
+   - The site will be available at `https://your-username.github.io/SafeRoadWebsite/`
 
 ### Manual Deployment
 
@@ -67,7 +67,7 @@ npm install --save-dev gh-pages
 2. **Update package.json** (already done):
 ```json
 {
-  "homepage": "https://iwitnessroads.github.io/iWitnessRoads_Website/",
+  "homepage": "https://your-username.github.io/SafeRoadWebsite/",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
@@ -83,14 +83,14 @@ npm run deploy
 ### Configuration
 
 The website is configured for GitHub Pages with:
-- **Base URL**: `/iWitnessRoads_Website/` (in `vite.config.js`)
+- **Base URL**: `/SafeRoadWebsite/` (in `vite.config.js`)
 - **Build Output**: `dist/` directory
 - **GitHub Actions**: Automatic deployment on push to main
 
 ## Project Structure
 
 ```
-iWitnessRoads_Website/
+SafeRoadWebsite/
 ├── src/
 │   ├── components/          # React components
 │   │   ├── ui/             # UI components (header, footer, logo)
@@ -166,7 +166,7 @@ This project is licensed under the MIT License.
 
 For questions or issues:
 - Email: iwitnessroads@gmail.com
-- GitHub Issues: [Create an issue](https://github.com/iwitnessroads/iWitnessRoads_Website/issues)
+- GitHub Issues: [Create an issue](https://github.com/your-username/SafeRoadWebsite/issues)
 
 ---
 

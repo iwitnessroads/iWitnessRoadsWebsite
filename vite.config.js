@@ -5,10 +5,10 @@ import react from '@vitejs/plugin-react'
 const isDev = process.env.NODE_ENV !== 'production'
 
 // For local development, use base: '/'.
-// For production (GitHub Pages), set base: '/iWitnessRoads_Website/'.
+// For production (GitHub Pages), set base: '/SafeRoadWebsite/'.
 export default defineConfig({
   plugins: [react()],
-  base: isDev ? '/' : '/iWitnessRoadsWebsite/',
+  base: isDev ? '/' : '/SafeRoadWebsite/',
   server: {
     port: 5173,
     open: true
