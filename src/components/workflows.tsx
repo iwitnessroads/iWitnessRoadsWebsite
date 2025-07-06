@@ -12,7 +12,7 @@ const reportImage = "images/iWR_report.png";
 const successImage = "images/iWR_success.png";
 
 export default function Workflows() {
-  return (
+  return ( 
     <section className="workflows-section">
       <div className="workflows-container">
         <div className="workflows-content">
