@@ -3,8 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -13,7 +12,7 @@ permissions:
 
 concurrency:
   group: "pages"
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   build-and-deploy:
@@ -37,6 +36,14 @@ jobs:
       
     - name: Build for GitHub Pages
       run: npm run build:pages
+      
+    - name: Verify build output
+      run: |
+        if [ ! -f "dist/index.html" ]; then
+          echo "Build failed: dist/index.html not found"
+          exit 1
+        fi
+        echo "Build verification passed"
       
     - name: Setup Pages
       uses: actions/configure-pages@v4
